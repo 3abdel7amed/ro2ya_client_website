@@ -1,0 +1,61 @@
+<div class="container-fluid py-5">
+  <div class="hero-section">
+    <div
+      class="hero-content position-absolute top-0 end-0 start-0 bottom-0 bg-black bg-opacity-50 d-flex align-items-center justify-content-center flex-column"
+    >
+      <div class="wrapper text-white text-center">
+        <h1 class="mb-3">الرؤية</h1>
+        <p class="mb-1 fs-3">المنزل المثالي بانتظارك هنا!</p>
+        <p class="mb-0 fs-3">اكتشف أماكن الإقامة المثالية معنا</p>
+      </div>
+      <button
+        class="btn btn-primary mt-5 d-flex align-items-center"
+        (click)="goToSearch()"
+      >
+        إبداء البحث الأن
+        <i
+          class="fa-solid fa-magnifying-glass fs-6 p-2 cursor-pointer hover rounded"
+        ></i>
+      </button>
+    </div>
+  </div>
+  <hr class="w-75 my-4 mx-auto" />
+  <div
+    class="intro-heading d-flex align-items-center justify-content-between mb-4"
+  >
+    <p class="mb-0 fs-5 fw-bold">تصفح أحدث العقارات</p>
+    <p class="mb-0 d-flex align-items-center gap-2 cursor-pointer text-primary">
+      <span>إبحث عن المزيد</span> <i class="fa-solid fa-angle-left"></i>
+    </p>
+  </div>
+  <div class="intro">
+    <div class="row">
+      <div class="col-md-3">
+        <div
+          class="card overflow-hidden border-primary cursor-pointer"
+          (click)="goToProperty()"
+        >
+          <div class="image">
+            <img
+              class="w-100"
+              src="../../../../assets/images/real_state_dummy_image.jpg"
+              alt="real-state image"
+            />
+          </div>
+          <div class="card-content p-2">
+            <p class="price mb-2 text-primary">1000000000 جم</p>
+            <p class="desc">
+              دوبلكس Double View بحري صريح مساحة / 224 متر ؛ 126 متر Roof مكون
+              من 4 غرف بفيو امامي بخصم على الكاش يصل لـ 39% او بمقدم 10% (
+              1,900,000 ) + تقسيط 8 سنين بدون فوائد في كمبوند تاج سيتي على
+            </p>
+            <div class="icons-container d-flex align-items-center gap-2">
+              <i class="fa-solid fa-toilet"></i> 2
+              <i class="fa-solid fa-bed"></i> 3
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

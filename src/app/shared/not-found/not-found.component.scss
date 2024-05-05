@@ -1,0 +1,9 @@
+.not-found {
+  width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+  .not-found {
+    width: 100%;
+  }
+}

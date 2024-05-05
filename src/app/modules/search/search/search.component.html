@@ -1,0 +1,148 @@
+<div class="container py-5">
+  <nav class="d-flex align-items-center mb-2 mb-lg-4">
+    <div class="search flex-grow-1">
+      <input
+        class="form-control"
+        type="text"
+        name="search"
+        id="search"
+        placeholder="ابحث"
+      />
+    </div>
+    <div class="search" *ngIf="!showSFButtons; else searchFilterContainer">
+      <span
+        class="btn btn-primary me-2 d-flex align-items-center justify-content-between gap-2"
+        >بحث
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </span>
+    </div>
+    <ng-template #searchFilterContainer>
+      <div
+        *ngIf="showSFButtons"
+        class="search-icon flex-grow-0 d-flex gap-2 align-items-center justify-content-center me-2"
+      >
+        <i
+          class="fa-solid fa-magnifying-glass fs-6 p-2 cursor-pointer hover rounded"
+        ></i>
+        <i
+          (click)="openFilter()"
+          class="fa-solid fa-filter fs-6 p-2 cursor-pointer hover rounded"
+        ></i>
+      </div>
+    </ng-template>
+  </nav>
+  <section>
+    <div class="row gx-4">
+      <!-- Filters on Large Screens ------------------------------------- -->
+      <div *ngIf="!showSFButtons" class="filter col-md-3 col-12">
+        <p
+          class="d-flex align-items-center gap-2 text-muted py-2 border-bottom"
+        >
+          الفلاتر
+          <i class="fa-solid fa-filter"></i>
+        </p>
+        <div class="city mb-2">
+          <span>المدينة</span>
+          <input class="form-control" type="text" name="city" id="city" />
+        </div>
+        <div class="block mb-2">
+          <span>قطعة</span>
+          <input class="form-control" type="text" name="block" id="block" />
+        </div>
+        <div class="sub-city mb-2">
+          <span>المنطقة</span>
+          <input
+            class="form-control"
+            type="text"
+            name="sub-city"
+            id="sub-city"
+          />
+        </div>
+        <div class="district mb-2">
+          <span>الحي</span>
+          <input
+            class="form-control"
+            type="text"
+            name="district"
+            id="district"
+          />
+        </div>
+        <hr />
+        <div class="price-filter mb-3">
+          <p class="mb-1">السعر</p>
+          <div class="price d-flex gap-2">
+            <div class="from">
+              <label for="price-from">من</label>
+              <input class="form-control" type="text" id="price-from" />
+            </div>
+            <div class="to">
+              <label for="price-to">إلى</label>
+              <input class="form-control" type="text" id="price-to" />
+            </div>
+          </div>
+        </div>
+        <div class="space-filter mb-3">
+          <p class="mb-1">المساحة</p>
+          <div class="price d-flex gap-2">
+            <div class="from">
+              <label for="space-from">من</label>
+              <input class="form-control" type="text" id="space-from" />
+            </div>
+            <div class="to">
+              <label for="space-to">إلى</label>
+              <input class="form-control" type="text" id="space-to" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Results ----------------------------- -->
+      <div class="results col-md-9 col-12">
+        <p class="text-muted py-2 border-bottom">نتائج البحث</p>
+        <div class="content cursor-pointer" (click)="openPropertyDetails()">
+          <div
+            class="item border border-1 border-primary rounded d-flex overflow-hidden"
+          >
+            <div class="property-image" style="width: 35%">
+              <img
+                class="card-image"
+                src="../../../../assets/images/real_state_dummy_image.jpg"
+                alt="realState_Image"
+              />
+            </div>
+            <div class="data p-3" style="width: 65%">
+              <h4 class="price mb-2">10000000 جم</h4>
+              <p class="title fw-semibold mb-2">
+                شقه ارضي ب جارديين ب مرحله ( jazell ) ب اميز لوكيشن ب كمبوند
+                سراي
+              </p>
+              <p class="desc fw-light mb-2">
+                دوبلكس Double View بحري صريح مساحة / 224 متر ؛ 126 متر Roof مكون
+                من 4 غرف بفيو امامي بخصم على الكاش يصل لـ 39% او بمقدم 10% (
+                1,900,000 ) + تقسيط 8 سنين بدون فوائد في كمبوند تاج سيتي على
+                طريق السويس مباشرة للتفاصيل اتصل الان على : 01123859079 + واتساب
+              </p>
+              <div
+                class="buttons-container d-flex align-items-center gap-2 justify-content-center justify-content-lg-start"
+              >
+                <button
+                  (click)="openContactOverlay()"
+                  class="btn btn-primary d-flex align-items-center gap-2"
+                >
+                  <span *ngIf="!showSFButtons">تواصل</span>
+                  <i class="fa-solid fa-phone opacity-75"></i>
+                </button>
+                <button
+                  (click)="openInterestOverlay()"
+                  class="btn btn-danger opacity-75 d-flex align-items-center gap-2"
+                >
+                  <span *ngIf="!showSFButtons">سجل اهتمامك</span>
+                  <i class="fa-solid fa-heart"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

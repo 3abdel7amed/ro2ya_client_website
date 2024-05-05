@@ -1,0 +1,20 @@
+<div class="content p-3">
+  <p class="text-center text-muted">إرسل لنا بياناتك و سنقوم بالتواصل معك</p>
+  <form
+    (ngSubmit)="handleInterestedForm(interestedForm)"
+    [formGroup]="interestedForm"
+  >
+    <div class="name">
+      <label for="name">الأسم</label>
+      <input type="text" class="form-control" id="name" />
+    </div>
+    <div class="phone">
+      <label for="phone">رقم الهاتف</label>
+      <input type="tel" class="form-control" id="phone" />
+    </div>
+    <p class="my-2 text-danger text-center" *ngIf="formIsInvalid">
+      الرجاء إدخال بياناتك صحيحة
+    </p>
+    <button class="btn btn-primary d-block w-auto mx-auto mt-3">إرسال</button>
+  </form>
+</div>
